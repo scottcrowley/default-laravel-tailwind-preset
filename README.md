@@ -6,12 +6,12 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 
 ## What it does
 
-1. Upgrades **laravel-mix to 4.0.12**
+1. Upgrades **laravel-mix** to **4.0.12**
 2. Installs **laravel-tailwind 0.1.0**
 3. Installs **tailwindcss 0.7.4**
 4. Removes **jquery** & **bootstrap**
 5. Adds an in memory **sqlite** database connection for phpunit.
-6. Removes the **css** directory with the **resources/** directory.
+6. Removes the **css** directory within the **resources/** directory.
 7. Adds `primary`, `secondary` & `error` colors to the **tailwind.js** file. These colors are currently set to orange, grey & red respectively. They can then be used to assign primary and secondary colors to backgrounds, text, borders, etc. and contain the same shading as the rest of the colors. e.g. `text-primary-lighter`, `bg-secondary-darkest`, `text-error-darker`
 8. Adds a `_btn` and `_text` partial with basic styling in the **sass** directory.
 9. Updates all relevant views to use the new primary, secondary and error color styles.
