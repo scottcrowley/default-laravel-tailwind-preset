@@ -29,6 +29,7 @@ class DefaultTailwindPreset extends Preset
         return array_merge([
             'laravel-mix' => '^4.0.12',
             'laravel-mix-tailwind' => '^0.1.0',
+            'tailwindcss' => '^0.7.4',
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
@@ -48,7 +49,7 @@ class DefaultTailwindPreset extends Preset
             }
 
             if (! $filesystem->isDirectory($directory = resource_path('sass/components'))) {
-                $filesystem->makeDirectory($directory.'/components', 0755, true);
+                $filesystem->makeDirectory($directory, 0755, true);
             }
         });
 
