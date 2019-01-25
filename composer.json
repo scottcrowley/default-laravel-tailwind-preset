@@ -1,5 +1,5 @@
 {
-  "name": "sc-laravel-default-tailwindcss-preset",
+  "name": "sc-laravel-presets/default-tailwindcss",
   "description": "Laravel frontend preset for default setup and Tailwind CSS",
   "keywords": ["laravel", "preset", "tailwindcss"],
   "license": "MIT",
