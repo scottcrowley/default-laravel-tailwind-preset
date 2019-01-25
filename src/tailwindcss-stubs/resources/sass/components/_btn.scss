@@ -1,0 +1,31 @@
+.btn {
+    @apply .bg-secondary .text-secondary-darkest .font-normal .text-sm .font-semibold .py-2 .px-4 .rounded;
+    cursor: pointer;
+
+    &.is-primary {
+        @apply .bg-primary .text-white;
+
+        &:hover {
+            @apply .bg-primary-dark;
+        }
+    }
+
+    &.is-outlined {
+        background: transparent;
+        @apply .border;
+    }
+
+    &.is-small {
+        @apply .text-xs .py-1 .px-3;
+    }
+
+    &:hover {
+        @apply .bg-secondary-dark .text-white;
+    }
+
+    &.is-narrow {
+        @apply .py-1 .px-2;
+    }
+}
+
+

@@ -1,0 +1,28 @@
+{
+  "name": "laravel-frontend-presets/default-tailwindcss",
+  "description": "Laravel frontend preset for default setup and Tailwind CSS",
+  "keywords": ["laravel", "preset", "tailwindcss"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Scott Crowley",
+      "email": "scott@scottcrowley.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "laravel/framework": "^5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "SCLaravelFrontendPresets\\DefaultTailwindPreset\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SCLaravelFrontendPresets\\DefaultTailwindPreset\\DefaultTailwindPresetServiceProvider"
+      ]
+    }
+  }
+}

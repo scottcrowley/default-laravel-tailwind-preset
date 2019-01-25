@@ -1,0 +1,11 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@import "components/btn";
+@import "components/text";
+
+@tailwind utilities;
+
+ [v-cloak] { display: none; }
+

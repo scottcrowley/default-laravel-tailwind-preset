@@ -1,0 +1,59 @@
+.field-group {
+    @apply .flex .items-stretch .mb-3 .items-center;
+    
+    & label {
+        @apply .text-right .font-semibold .text-secondary-dark .text-sm .pr-3 .align-middle .w-1/4;
+    }
+
+    & .field {
+        @apply .flex .flex-col .w-3/4;
+
+        & .danger {
+            @apply .text-error-dark .text-sm .mt-2;
+        }
+    }
+
+    & input {
+        @apply .flex-grow .h-8 .px-2 .border .rounded
+    }
+}
+
+ul.danger {
+    @apply .list-reset .w-3/4 .ml-auto .border .border-error-dark .rounded .p-4;
+
+    & li {
+        @apply .text-error-dark .text-sm;
+    }
+}
+
+p {
+    @apply .text-base .text-secondary-dark;
+}
+
+.title {
+    @apply .text-lg .text-secondary-darker mb-2;
+}
+
+a {
+    @apply .no-underline .text-secondary-darker;
+
+    &.btn {
+        @apply .text-center;
+
+        &:hover {
+            @apply .no-underline;
+        }
+    }
+
+    &:hover {
+        @apply .underline; 
+    }
+}
+
+.item-list {
+    &:hover {
+        & p {
+            @apply .text-secondary-darkest;
+        }
+    }
+}
