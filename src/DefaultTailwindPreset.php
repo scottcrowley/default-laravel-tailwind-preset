@@ -46,6 +46,8 @@ class DefaultTailwindPreset extends Preset
 
             if (! $filesystem->isDirectory($directory = resource_path('sass'))) {
                 $filesystem->makeDirectory($directory, 0755, true);
+            } else {
+                $filesystem->delete(resource_path('sass/_variables.scss'));
             }
 
             if (! $filesystem->isDirectory($directory = resource_path('sass/components'))) {
