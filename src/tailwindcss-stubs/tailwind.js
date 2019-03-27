@@ -60,6 +60,22 @@ let colors = {
   'secondary-lighter': '#f1f5f8',
   'secondary-lightest': '#f8fafc',
 
+  'success-darkest': '#0f2f21',
+  'success-darker': '#1a4731',
+  'success-dark': '#1f9d55',
+  'success': '#38c172',
+  'success-light': '#51d88a',
+  'success-lighter': '#a2f5bf',
+  'success-lightest': '#e3fcec',
+
+  'warning-darkest': '#453411',
+  'warning-darker': '#684f1d',
+  'warning-dark': '#f2d024',
+  'warning': '#ffed4a',
+  'warning-light': '#fff382',
+  'warning-lighter': '#fff9c2',
+  'warning-lightest': '#fcfbeb',
+
   'error-darkest': '#3b0d0c',
   'error-darker': '#621b18',
   'error-dark': '#cc1f1a',
@@ -69,6 +85,14 @@ let colors = {
   'error-lightest': '#fcebea',
 
   'transparent': 'transparent',
+
+  'smoke-darkest': 'rgba(0, 0, 0, 0.9)',
+  'smoke-darker': 'rgba(0, 0, 0, 0.75)',
+  'smoke-dark': 'rgba(0, 0, 0, 0.6)',
+  'smoke': 'rgba(0, 0, 0, 0.5)',
+  'smoke-light': 'rgba(0, 0, 0, 0.4)',
+  'smoke-lighter': 'rgba(0, 0, 0, 0.25)',
+  'smoke-lightest': 'rgba(0, 0, 0, 0.1)',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',

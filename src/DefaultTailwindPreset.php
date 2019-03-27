@@ -14,7 +14,7 @@ class DefaultTailwindPreset extends Preset
         static::updatePackages();
         static::updateStyles();
         static::updateBootstrapping();
-        static::updateWelcomePage();
+        static::updateDefaultViews();
         static::removeNodeModules();
     }
 
@@ -58,11 +58,14 @@ class DefaultTailwindPreset extends Preset
         copy(__DIR__.'/tailwindcss-stubs/resources/sass/app.scss', resource_path('sass/app.scss'));
         copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_btn.scss', resource_path('sass/components/_btn.scss'));
         copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_text.scss', resource_path('sass/components/_text.scss'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_widget.scss', resource_path('sass/components/_widget.scss'));
     }
 
     protected static function updateBootstrapping()
     {
-        (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
+        if (! (new Filesystem)->isDirectory($directory = resource_path('js/components'))) {
+            (new Filesystem)->makeDirectory($directory, 0755, true);
+        }
 
         copy(__DIR__.'/tailwindcss-stubs/tailwind.js', base_path('tailwind.js'));
 
@@ -70,19 +73,20 @@ class DefaultTailwindPreset extends Preset
 
         copy(__DIR__.'/tailwindcss-stubs/resources/js/app.js', resource_path('js/app.js'));
         copy(__DIR__.'/tailwindcss-stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/js/components/Flash.vue', resource_path('js/components/Flash.vue'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/js/components/Dropdown.vue', resource_path('js/components/Dropdown.vue'));
     }
 
-    protected static function updateWelcomePage()
+    protected static function updateDefaultViews()
     {
         (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
 
+        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views/layouts', resource_path('views/layouts'));
         copy(__DIR__.'/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
 
     protected static function scaffoldAuth()
     {
-        (new Filesystem)->delete(resource_path('views/home.blade.php'));
-
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
 
         file_put_contents(
@@ -91,7 +95,10 @@ class DefaultTailwindPreset extends Preset
             FILE_APPEND
         );
 
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views', resource_path('views'));
+        (new Filesystem)->delete(resource_path('views/home.blade.php'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/views/home.blade.php', resource_path('views/home.blade.php'));
+
+        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views/auth', resource_path('views/auth'));
     }
 
     protected static function compileControllerStub()

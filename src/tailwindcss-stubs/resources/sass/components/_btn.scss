@@ -28,4 +28,31 @@
     }
 }
 
+.btn-text {
+    @apply .bg-transparent .text-secondary-dark .font-normal .text-sm .font-semibold .p-0 .border-none .no-underline;
+    cursor: pointer;
 
+    &.is-primary {
+        @apply .text-primary;
+
+        &:hover {
+            @apply .text-primary-dark;
+        }
+    }
+
+    &.is-small {
+        @apply .text-xs;
+    }
+
+    &:hover {
+        @apply .text-secondary-darkest;
+    }
+}
+
+button.burger {
+    @apply .flex .items-center .px-3 .py-2 .border .rounded .text-primary-dark .border-primary-light;
+
+    &:hover {
+        @apply .text-primary-dark .bg-primary-lightest .border-primary-dark;
+    }
+}

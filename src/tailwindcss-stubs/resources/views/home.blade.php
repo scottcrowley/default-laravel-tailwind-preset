@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex items-center">
-    <div class="md:w-1/2 md:mx-auto">
+<div class="min-h-screen flex items-center justify-center">
+    <div class="flex flex-col justify-around h-full">
         <div class="rounded shadow">
             <div class="font-medium text-lg text-primary-darker bg-primary p-3 rounded-t">
                 Dashboard
