@@ -36,11 +36,8 @@
                 <dropdown>
                     <a slot="link" class="dropdown-toggle" href="#">Nav Item 1</a>
                     <div slot="dropdown-items">
-                        <a href="{{ route('legouser.setlists') }}">Sub Nav 1</a>
-                        <a href="{{ route('legouser.sets') }}">Sub Nav 2</a>
-                        <a href="{{ route('legouser.parts') }}">Parts</a>
-                        <a href="{{ route('legouser.loose_parts') }}">Loose Parts</a>
-                        <a href="{{ route('legouser.lost_parts') }}">Lost Parts</a>
+                        <a href="">Sub Nav 1</a>
+                        <a href="">Sub Nav 2</a>
                     </div>
                 </dropdown>
             @endif
