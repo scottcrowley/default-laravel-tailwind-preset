@@ -4,7 +4,11 @@
 
 @import "components/btn";
 @import "components/text";
-@import "components/widget";
+@import "components/dropdown";
+@import "components/loader";
+@import "components/selectmenu";
+
 
 @tailwind utilities;
 
+[v-cloak] { display: none; }

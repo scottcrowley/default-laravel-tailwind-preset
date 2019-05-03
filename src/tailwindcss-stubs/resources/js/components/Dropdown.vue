@@ -1,39 +1,45 @@
 <template>
-    <div class="dropdown-menu" ref="dropdowncontainer">
-        <div role="button" class="dropdown-toggle-wrap" @click.prevent="toggle">
-            <slot name="link"></slot>
+    <div class="dropdown relative">
+        <div class="dropdown-toggle"
+             aria-haspopup="true"
+             :aria-expanded="isOpen"
+             @click.prevent="isOpen = !isOpen"
+        >
+            <slot name="trigger"></slot>
         </div>
 
-        <div v-show="open" class="dropdown-items-wrap">
-            <slot name="dropdown-items"></slot>
+        <div v-show="isOpen"
+             class="dropdown-menu absolute bg-white py-2 rounded shadow-lg mt-2"
+             :class="align === 'left' ? 'pin-l' : 'pin-r'"
+             :style="{ width }"
+        >
+            <slot></slot>
         </div>
     </div>
 </template>
 
 <script>
+    // Dropdown menu - Hat-tip to Jeffery Way.
     export default {
+        props: {
+            width: { default: 'auto' },
+            align: { default: 'left' }
+        },
         data() {
-            return {
-                open: false
+            return { isOpen: false }
+        },
+        watch: {
+            isOpen(isOpen) {
+                if (isOpen) {
+                    document.addEventListener('click', this.closeIfClickedOutside);
+                }
             }
         },
-
-        created() {
-            window.addEventListener('click', this.close)
-        },
-
-        beforeDestroy() {
-            window.removeEventListener('click', this.close)
-        },
-
         methods: {
-            toggle() {
-                this.open = ! this.open;
-            },
-
-            close(e) {
-                if (! this.$refs.dropdowncontainer.contains(e.target)) {
-                    this.open = false;
+            closeIfClickedOutside(event) {
+                if (! event.target.closest('.dropdown')) {
+                    this.isOpen = false;
+                    document.removeEventListener('click', this.closeIfClickedOutside);
                 }
             }
         }

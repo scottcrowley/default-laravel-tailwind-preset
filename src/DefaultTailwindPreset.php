@@ -58,7 +58,9 @@ class DefaultTailwindPreset extends Preset
         copy(__DIR__.'/tailwindcss-stubs/resources/sass/app.scss', resource_path('sass/app.scss'));
         copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_btn.scss', resource_path('sass/components/_btn.scss'));
         copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_text.scss', resource_path('sass/components/_text.scss'));
-        copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_widget.scss', resource_path('sass/components/_widget.scss'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_dropdown.scss', resource_path('sass/components/_dropdown.scss'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_loader.scss', resource_path('sass/components/_loader.scss'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/sass/components/_selectmenu.scss', resource_path('sass/components/_selectmenu.scss'));
     }
 
     protected static function updateBootstrapping()

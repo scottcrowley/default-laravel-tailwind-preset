@@ -11,34 +11,42 @@
                     <a class="block sm:inline sm:pr-3 sm:mb-2 no-underline hover:underline text-primary-darker text-sm" href="{{ url('/login') }}">{{ __('Login') }}</a>
                     <a class="block sm:inline no-underline hover:underline text-primary-darker text-sm" href="{{ url('/register') }}">{{ __('Register') }}</a>
                 @else
-                    <dropdown>
-                        <div slot="link" class="block md:hidden">
-                            <button class="burger" style="outline: none;">
-                                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-                            </button>
+                    <dropdown align="right" width="200px">
+                        <div slot="trigger">
+                            <div class="block md:hidden">
+                                <button class="burger" style="outline: none;">
+                                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                                </button>
+                            </div>
+                            <div class="hidden md:block">
+                                <button
+                                    class="dropdown-toggle-link flex items-center text-secondary-darker no-underline text-lg focus:outline-none"
+                                    v-pre
+                                >
+                                    {{ auth()->user()->name }}
+                                </button>
+                            </div>
                         </div>
-                        <button slot="link" class="hidden md:block btn is-primary is-small" style="outline: none;">{{ Auth::user()->name }}</button>
 
-                        <div slot="dropdown-items" class="text-right pr-3 pl-10">
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                @csrf
-                            </form>
-                        </div>
+                        <a href="#" class="dropdown-menu-link w-full text-left">Link 1</a>
+                        <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <button type="submit" class="dropdown-menu-link w-full text-left">{{ __('Logout') }}</button>
+                        </form>
                     </dropdown>
                 @endguest
             </div>
         </div>
         <div class="flex item-end justify-center mb-2 mt-2 md:mt-3">
             @if (auth()->check())
-                <dropdown>
-                    <a slot="link" class="dropdown-toggle" href="#">Nav Item 1</a>
-                    <div slot="dropdown-items">
-                        <a href="">Sub Nav 1</a>
-                        <a href="">Sub Nav 2</a>
+                <dropdown align="right">
+                    <div slot="trigger">
+                        <a href="#" class="dropdown-toggle-link w-full text-left">Nav Item 1</a>
                     </div>
+
+                    <a href="#" class="dropdown-menu-link w-full text-left">Sub Nav 1</a>
+                    <a href="#" class="dropdown-menu-link w-full text-left">Sub Nav 2</a>
                 </dropdown>
             @endif
         </div>
