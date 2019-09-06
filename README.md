@@ -6,7 +6,7 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 
 ## What it does
 
-1. Upgrades **laravel-mix** to **4.0.12**
+1. Upgrades **laravel-mix** to **4.1.2**
 2. Installs **laravel-tailwind 0.1.0**
 3. Installs **tailwindcss 0.7.4**
 4. Removes **jquery** & **bootstrap**
