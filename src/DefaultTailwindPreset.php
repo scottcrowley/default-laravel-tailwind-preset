@@ -16,6 +16,7 @@ class DefaultTailwindPreset extends Preset
         static::updateBootstrapping();
         static::updateDefaultViews();
         static::removeNodeModules();
+        static::updatePhpUnitXml();
     }
 
     public static function installAuth()
@@ -122,5 +123,12 @@ class DefaultTailwindPreset extends Preset
             Container::getInstance()->getNamespace(),
             file_get_contents(__DIR__.'/tailwindcss-stubs/app/Http/Controllers/HomeController.stub')
         );
+    }
+
+    protected static function updatePhpUnitXml()
+    {
+        (new Filesystem)->delete(base_path('phpunit.xml'));
+
+        copy(__DIR__.'/tailwindcss-stubs/phpunit.xml', base_path('phpunit.xml'));
     }
 }
