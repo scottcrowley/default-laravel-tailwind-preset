@@ -1,15 +1,15 @@
-// Dropdown menu - Hat-tip to Jeffery Way.
+/* Dropdown menu - Hat-tip to Jeffery Way. */
 .dropdown-toggle {
     > button:focus {
-        outline: 0;
+        @apply outline-none;
     }
 }
 
 .dropdown-menu-link {
-    @apply .block .no-underline .text-sm .leading-loose .px-4 .text-secondary-darker;
+    @apply block no-underline text-sm leading-loose px-4 text-secondary-800;
 
     &:hover {
-        @apply .no-underline;
+        @apply no-underline;
         background: rgba(0, 0, 0, 0.1);
     }
 }

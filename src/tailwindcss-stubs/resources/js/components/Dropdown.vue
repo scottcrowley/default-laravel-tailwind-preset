@@ -9,8 +9,8 @@
         </div>
 
         <div v-show="isOpen"
-             class="dropdown-menu absolute bg-white py-2 rounded shadow-lg mt-2"
-             :class="align === 'left' ? 'pin-l' : 'pin-r'"
+             class="dropdown-menu absolute bg-white py-2 rounded shadow-lg mt-2 z-10"
+             :class="align === 'left' ? 'left-0' : 'right-0'"
              :style="{ width }"
         >
             <slot></slot>
