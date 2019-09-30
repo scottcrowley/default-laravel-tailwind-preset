@@ -10,6 +10,7 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 1. Installs **postcss-import 12.0.1**
 1. Installs **postcss-nesting 7.0.1**
 1. Installs **tailwindcss 1.1.2**
+1. Installs **@tailwindcss/custom-forms 0.2.1**
 1. Installs **vue 2.6.10**
 1. Installs **vue-template-compiler 2.6.10**
 1. Removes **jquery** & **bootstrap** & **sass**
