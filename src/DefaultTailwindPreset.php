@@ -28,7 +28,7 @@ class DefaultTailwindPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            'laravel-mix' => '^4.1.2',
+            '@tailwindcss/custom-forms' => '^0.2.1',
             'postcss-import' => '^12.0.1',
             'postcss-nesting' => '^7.0.1',
             'tailwindcss' => '^1.1.2',

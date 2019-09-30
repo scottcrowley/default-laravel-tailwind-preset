@@ -27,9 +27,24 @@ module.exports = {
         warning: colors.orange,
         danger: colors.red,
         error: colors.red,
-      }
+      },
+      customForms: theme => ({
+        default: {
+          'input, textarea, multiselect, select': {
+            fontSize: theme('fontSize.sm'),
+          },
+          'input' : {
+            width: theme('width.full'),
+            paddingTop: theme('spacing.1'),
+            paddingBottom: theme('spacing.1'),
+            lineHeight: theme('lineHeight.relaxed'),
+          },
+        },
+      })
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+  ]
 }
