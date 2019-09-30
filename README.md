@@ -26,8 +26,12 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 ## Usage
 
 1. Fresh install Laravel >= 6 and `cd` to your app.
-1. Install this preset via `composer require sc-laravel-presets/default-tailwindcss`. Laravel will automatically discover this package. No need to register the service provider.
-1. Install the preset:
+1. Install this preset:
+    *Laravel will automatically discover this package. No need to register the service provider.*
+    ```bash
+    composer require sc-laravel-presets/default-tailwindcss
+    ```
+1. Run the preset installer:
 
     *Command to install only the base preset without any of the authorization scafolding.*
     ```bash
@@ -42,14 +46,14 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
     ```bash
     npm install && npm run dev
     ``` 
-1. Configure your favorite database (mysql, sqlite etc.)
+1. Configure your favorite database (mysql, sqlite etc.). See the [Laravel documentation](https://laravel.com/docs/6.x/database) for more details.
 1. Migrate your database, if needed:
     ```bash
     php artisan migrate
     ```
 1. Start your local web server by running either of the following commands:
 
-    *Command to start up Laravel Valet*
+    *Command to start up [Laravel Valet](https://laravel.com/docs/6.x/valet)*
     ```bash
     valet start
     ```
